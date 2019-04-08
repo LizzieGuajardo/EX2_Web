@@ -19,7 +19,6 @@ const displayPiece = function(objectID,srchTerm,callback){
 			var constituents = "null"
 			var title = "null"
 			var year = "null"
-			var technique = "null"
 			var metUrl = "null"
 
 			if(response.body.constituents){ //Si no hay autor
@@ -31,9 +30,6 @@ const displayPiece = function(objectID,srchTerm,callback){
 			if(response.body.objectEndDate){ //Si no hay año
 				year = response.body.objectEndDate
 			}
-			if(response.body.medium){ //Si no hay tecnica
-				technique = response.body.mediums
-			}
 			if(response.body.objectURL){ //Si no hay url
 				metUrl = response.body.objectURL
 			}
@@ -44,7 +40,7 @@ const displayPiece = function(objectID,srchTerm,callback){
 			  	artist : constituents,			  	
 			  	title: title,
 			 	year: year,
-			  	technique: technique,
+			  	technique: response.body.medium,
 			  	metUrl: metUrl
 			}
 			callback(undefined, info)
