@@ -57,7 +57,7 @@ app.get("/met", function(req,res){
 			else
 			{
 				res.send({
-					objectName : response.objectName,
+					searchTerm : response.searchTerm,
 				  	artist : response.artist,
 				  	title: response.title,
 				 	year: response.year,

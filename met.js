@@ -5,7 +5,7 @@
 const request = require ('request')
 
 //https://collectionapi.metmuseum.org/public/collection/v1/objects/1
-const displayPiece = function(objectID,searchTerm,callback){
+const displayPiece = function(objectID,srchTerm,callback){
 	const url = 'https://collectionapi.metmuseum.org/public/collection/v1/objects/'+objectID
 	request({url:url, json:true}, function(error,response){
 		if(error){//no se puede acceder a la liga
@@ -40,7 +40,7 @@ const displayPiece = function(objectID,searchTerm,callback){
 			
 			const info = 
 			{
-			  	objectName : searchTerm,
+			  	searchTerm : srchTerm,
 			  	artist : constituents,			  	
 			  	title: title,
 			 	year: year,
